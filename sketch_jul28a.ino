@@ -30,7 +30,7 @@ void setup() {
 }
 
 void loop() {
-  if (yaEspereBro){
+  if ((yaEspereBro)&&(!digitalRead(pinDelBotonReLoco))){
     long tiempo;
     long distancia_delantera;
     
@@ -68,9 +68,13 @@ void loop() {
   } else {
     if (digitalRead(pinDelBotonReLoco)){        //  Si se presionó el botón
       while(digitalRead(pinDelBotonReLoco)){}   //  mantengo apretado hasta que lo suelte
-      delay(5000);                              //  Espero 5000ms que serían 5 segundos
+      if (!yaEspereBro){
+        delay(1000);                              //  Espero 1000ms que serían 1 segundo
+        yaEspereBro = true;
+      } else {                     //  Espero 1000ms que serían 1 segundo
+          yaEspereBro = false;
+      }
     }
-
   }
 }
 
