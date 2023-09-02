@@ -28,4 +28,7 @@ El código fuente para este proyecto se encuentra en el archivo `codigo.ino`. Ab
 
 Una vez cargado el código en tu Arduino y conectados los componentes según el esquema de conexiones, podrás ejecutar el proyecto. El Arduino controlará el motor DC, utilizará el sensor de ultrasonido para evitar obstáculos y el módulo TCR5000 para seguir una línea si está configurado para ello.
 
+## Contribuciones
+
+- Mario Papetti (https://github.com/mario-dango): Contribuyó significativamente en todas las etapas del proyecto, incluyendo la programación, las conexiones de hardware y la documentación.
 ---
