@@ -8,11 +8,11 @@ Este proyecto está diseñado para controlar un motor DC utilizando un Arduino y
 
 ## Componentes Necesarios
 
-- Arduino (cualquier modelo compatible)
+- Arduino UNO (cualquier modelo compatible)
 - Puente H L298N
-- Sensor de Ultrasonido
-- Módulo TCR5000 (para detección de línea)
-- Motor DC
+- Sensor de Ultrasonido (Para detección de oponente)
+- 2 Módulo TCR5000 (para detección de línea)
+- 2 Motores DC (con caja reductora)
 - Batería o fuente de alimentación
 - Cables y conectores
 
@@ -22,7 +22,7 @@ Asegúrate de realizar las conexiones adecuadas entre los componentes. Puedes en
 
 ## Código Fuente
 
-El código fuente para este proyecto se encuentra en el archivo `codigo.ino`. Abre este archivo en el entorno de desarrollo Arduino y carga el código en tu placa Arduino.
+El código fuente para este proyecto se encuentra en el archivo `Robot-Sumo.ino`. Abre este archivo en el entorno de desarrollo Arduino y carga el código en tu placa Arduino.
 
 ## Uso
 
