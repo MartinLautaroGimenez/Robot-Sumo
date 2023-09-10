@@ -6,7 +6,7 @@ int sensor_adelante_trig = 9;
 int sensor_adelante_echo = 8;
 int seguidordelinealect;
 int seguidor_de_linea = 2;
-bool bandera = false;
+bool bandera = true;
 
 // by mario
 #define pinDelBotonReLoco 4
@@ -26,7 +26,7 @@ void setup() {
   digitalWrite(sensor_adelante_trig, LOW);
   Serial.begin(9600);
   pinMode(seguidor_de_linea, INPUT);
-  attachInterrupt(digitalPinToInterrupt(seguidor_de_linea), funcbanderas, CHANGE);
+  attachInterrupt(digitalPinToInterrupt(seguidor_de_linea), funcbanderas, LOW);
 }
 
 void loop() {
@@ -64,17 +64,19 @@ void loop() {
       digitalWrite(motor_B1, HIGH);
       digitalWrite(motor_B2, LOW);
       delay(2000);
+      Serial.println("Funciona!");
     }
   }   
   if (digitalRead(pinDelBotonReLoco)){        //  Si se presionó el botón
-    while(digitalRead(pinDelBotonReLoco)){}   //  mantengo apretado hasta que lo suelte
+    while(digitalRead(pinDelBotonReLoco)){}   //  mantengo a pretado hasta que lo suelte
     if (!yaEspereBro){
       delay(1000);                              //  Espero 1000ms que serían 1 segundo
       yaEspereBro = true;
+      Serial.println("Boton pulsado");
     } else {                     //  Espero 1000ms que serían 1 segundo
         yaEspereBro = false;
     }
-  }  
+     }  
 }
 
 void funcbanderas(){
