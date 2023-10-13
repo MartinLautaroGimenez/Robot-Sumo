@@ -1,11 +1,11 @@
-int motor_A1 = 13;
+int motor_A1 = 13 ;
 int motor_A2 = 12;
 int motor_B1 = 11;
 int motor_B2 = 10;
 int sensor_adelante_trig = 9;
 int sensor_adelante_echo = 8;
 int seguidordelinealect;
-int seguidor_de_linea = 2;
+int seguidor_de_linea = 2; /*Violeta, gris blanco  */
 bool bandera = true;
 
 // by mario
@@ -40,9 +40,8 @@ void loop() {
     digitalWrite(sensor_adelante_trig, LOW);
     tiempo = pulseIn(sensor_adelante_echo, HIGH);
     distancia_delantera = tiempo / 59;
-
+    Serial.println(distancia_delantera);
     seguidordelinealect = digitalRead(seguidor_de_linea);  // Lectura del seguidor de línea
-  
     // Detección de obstáculo (si el objetivo está a menos de 20 cm)
     if ((distancia_delantera < 20) && (bandera == false)) {
       digitalWrite(motor_A1, HIGH);
@@ -64,7 +63,6 @@ void loop() {
       digitalWrite(motor_B1, HIGH);
       digitalWrite(motor_B2, LOW);
       delay(2000);
-      Serial.println("Funciona!");
     }
   }   
   if (digitalRead(pinDelBotonReLoco)){        //  Si se presionó el botón
